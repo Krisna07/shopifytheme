@@ -1,9 +1,17 @@
-<header>
-  <h1>{{ shop.name }}</h1>
-  <ul>
+<nav class="navigationBar">
+  <div>{{ shop.name | upcase }}</div>
+  <ul class="menuList_big">
     {% for link in linklists.main-menu.links -%}
 
     <li>{{ link.title | link_to : link.url }}</li>
     {% endfor %}
   </ul>
-</header>
+  <div class="signinSingupCart">
+    <button class="primaryBtn" type="submit">Signin/Signup</button>
+    <div>
+      <button class="primaryBtn" type="submit">
+        <img src="{{ "cart.png" | assets_url }}" alt=""> Cart
+      </button>
+    </div>
+  </div>
+</nav>
