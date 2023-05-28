@@ -1,16 +1,31 @@
-<div>
-  <h2>{{ collections["frontpage"].title }}</h2>
-  {% for product in collections['frontpage'].products %}
-  <div>
-    <a href="{{ product.url }}">
-      <img
-        src="{{ product.featured_image | image_url : width : 400 }}"
-        alt=""
-      />
-      <h3>{{ product.title }}</h3>
-      <p>{{ product.price | money_with_currency }}</p>
-    </a>
+<div class="indexPage">
+  <div class="hero">
+    <div class="hero_content">
+      <h2>The Online Store</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis
+        dolorum dolorem quia dicta, impedit quibusdam magnam nemo tenetur
+        assumenda unde?
+      </p>
+    </div>
   </div>
-  {{ -product.title | link_to : product.url }}
-  {% endfor %}
+
+  <div class="cataloges">
+    <h2>Products</h2>
+    <div class="catalogueItems">
+      {% for product in collections['frontpage'].products limit: 8 %}
+      <div class="items_card">
+        <a href="{{ product.url }}">
+          <img
+            src="{{ product.featured_image | image_url : width : 300 }}"
+            alt=""
+          />
+        </a>
+        <h4>{{ product.title }}</h4>
+        <p>{{ product.price | money_with_currency }}</p>
+      </div>
+      {{ -product.title | link_to : product.url }}
+      {% endfor %}
+    </div>
+  </div>
 </div>
