@@ -87,29 +87,31 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-/* .menuItems::after {
+.menuItems::after {
   content: "";
   width: 0%;
   height: 2px;
-  background-color: var(--light);
+  background-color: var(--textColor);
   position: absolute;
   left: 0;
   bottom: 5px;
   transition: all ease-in-out 200ms;
 }
-.menuList_big li:hover::after {
+.menuList_big .menuItems:hover::after {
   width: 100%;
-} */
+}
 .primaryBtn {
   color: var(--btnTextColors);
-  background-color: var(--buttonColor);
-  padding: 10px 20px;
-  border-radius: 8px;
+  background-color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 4px;
   font-weight: 600;
+  position: relative;
+  z-index: 99;
 }
 
 .signinSingupCart {
@@ -117,11 +119,23 @@ p {
   align-items: center;
   gap: 20px;
 }
-
+.primaryBtn::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+  position: absolute;
+  z-index: -1;
+  border-radius: 4px;
+}
 .primaryBtn:hover {
-  background-color: var(--buttonColor);
-
-  box-shadow: 0 0 0 2px 0 gray;
+  background-color: var(--lightDark);
+  transform: translate(-4px, 4px);
+  transition: all ease-in-out 200ms;
+}
+.primaryBtn:hover::after {
+  transform: translate(4px, -4px);
+  transition: all ease-in-out 200ms;
 }
 
 .indexPage {
