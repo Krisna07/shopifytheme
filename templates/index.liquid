@@ -1,12 +1,13 @@
 <div class="indexPage">
   <div class="hero">
     <div class="hero_content">
-      <h2>The Online Store</h2>
+      <h2 class="head_text_gradient">The Online Store</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis
         dolorum dolorem quia dicta, impedit quibusdam magnam nemo tenetur
         assumenda unde?
       </p>
+      <button class="primaryBtn">Shop <i icon-name="chevron-right"></i></button>
     </div>
   </div>
 
@@ -27,5 +28,6 @@
       {{ -product.title | link_to : product.url }}
       {% endfor %}
     </div>
+    <button class="primaryBtn">View All</button>
   </div>
 </div>

@@ -1,3 +1,19 @@
 const primaryBtn = document.querySelectorAll(".primaryBtn");
-primaryBtn.appendChild(<p>Hero</p>);
-console.log(primaryBtn);
+
+primaryBtn.forEach((btn) => {
+  const iconChevron = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
+
+  const iconArrow = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
+
+  let para = document.createElement("span");
+  para.innerHTML = iconChevron;
+  btn.appendChild(para);
+
+  btn.addEventListener("mouseover", () => {
+    para.innerHTML = iconArrow;
+  });
+
+  btn.addEventListener("mouseout", () => {
+    para.innerHTML = iconChevron;
+  });
+});
